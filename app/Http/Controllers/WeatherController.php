@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+//use App\Classes\YahooWeather;
 
 class WeatherController extends Controller
 {
@@ -16,7 +17,9 @@ class WeatherController extends Controller
      */
     public function index($city)
     {
-        return view('weather')->with('city', $city);
+        $weather = new \App\Classes\YahooWeather;
+        $myWeather = $weather->getWeatherByCity($city);
+        return view('weather')->with('weather', $myWeather);
     }
 
     /**
