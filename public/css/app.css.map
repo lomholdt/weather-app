@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.css"],"names":[],"mappings":"AAAA","file":"app.css","sourcesContent":[],"sourceRoot":"/source/"}
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAGA;EACE,mBAAkB;EAClB,kBAAiB;EACjB,iBAAgB;EAChB,kBACD,EALc","file":"app.css","sourcesContent":["\n// CSS goes here :) \n\n.promo-caption{\n  font-size: 1.7rem;\n  font-weight: 500;\n  margin-top: 5px;\n  margin-bottom: 0\n}"],"sourceRoot":"/source/"}

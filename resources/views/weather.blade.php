@@ -3,17 +3,24 @@
 @section('content')
 
 <div class="row">
-	<div class="col s6">
-		<div>
-			@foreach ($weatherObject as $w)
-	
-			@endforeach
-		</div>
-	</div>
-	<div class="col s6"> 
+
+	@foreach($weatherData as $w)
+
+
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{ $w->getOrigin() }}</span>
+              <p>{{ $w->getTemp() }}</p>
+              <p>{{ $w->getCountry() }}</p>
+              <p>{{ $w->getCity() }}</p>
+            </div>
+          </div>
+        </div>
+
+	@endforeach
 
 	
-	 </div>
-	
+
 </div>
 @stop

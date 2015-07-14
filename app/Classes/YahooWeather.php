@@ -8,7 +8,7 @@ class YahooWeather{
 
 		$BASE_URL = "http://query.yahooapis.com/v1/public/yql";
 
-	    $yql_query = 'select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text="'.$city.'") and u="c"';
+	    $yql_query = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="'.$city.'") and u="c"';
 	    $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
 
 	    // Make call with cURL
@@ -18,7 +18,17 @@ class YahooWeather{
 	    
 	    // Convert JSON to PHP object
 	     $phpObj =  json_decode($json);
-	    return $phpObj;
+
+	     $weather = new Weather();
+	     $weather->setOrigin('Yahoo'); 
+	     foreach ($phpObj as $elm) {
+	     	$weather->setTemp($elm->results->channel->item->condition->temp);
+	     	$weather->setCity($elm->results->channel->location->city);
+	     	$weather->setCountry($elm->results->channel->location->country);
+	     }
+
+
+	    return $weather;
 	}
 
 }

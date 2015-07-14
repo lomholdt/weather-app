@@ -6,7 +6,16 @@ class OpenWeatherMap {
 		$owm_url = "http://api.openweathermap.org/data/2.5/find?q=".$city."&units=metric";
     	$owm_json = file_get_contents($owm_url,0,null,null);
     	$owm_output = json_decode($owm_json);
-        return $owm_output;
+
+	     $weather = new Weather();
+	     $weather->setOrigin('OpenWeatherMap'); 
+	     foreach ($owm_output->list as $elm) {
+	     	$weather->setTemp($elm->main->temp);
+	     	$weather->setCity($elm->name);
+	     	$weather->setCountry($elm->sys->country);
+	     }
+
+        return $weather;
 	}
 }
 ?>
