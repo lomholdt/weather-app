@@ -16,10 +16,8 @@ class WeatherController extends Controller
      */
     public function index($city)
     {
-        /* OpenWeatherMap API 2.5 */
-        $owm_url = "http://api.openweathermap.org/data/2.5/find?q=".$city."&units=metric";
-        $owm_json = file_get_contents($owm_url,0,null,null);
-        $owm_output = json_decode($owm_json);
+        $owm = new \App\Classes\OpenWeatherMap;
+        $owm_output = $owm->owmCityWeather($city);
 
         return view('weather')->with('owm_output', $owm_output);
     }
