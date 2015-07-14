@@ -1,5 +1,9 @@
 @extends('main')
 
 @section('content')
-	<div>Hi there {{ $city }}</div>
+	<div>
+		@foreach ($owm_output->list as $owm)
+	    <p>{{ $owm->name }}: {{ $owm->main->temp }}</p>
+		@endforeach
+	</div>
 @stop
