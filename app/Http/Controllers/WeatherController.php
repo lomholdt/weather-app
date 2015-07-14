@@ -17,10 +17,17 @@ class WeatherController extends Controller
      */
     public function index($city)
     {
+
         $owm = new \App\Classes\OpenWeatherMap;
         $owm_output = $owm->owmCityWeather($city);
 
-        return view('weather')->with('owm_output', $owm_output);
+        $weather = new \App\Classes\YahooWeather;
+        $myWeather = $weather->getWeatherByCity($city);
+
+        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather);
+
+        return view('weather')->with('weatherData', $weatherData);
+
     }
 
     /**
