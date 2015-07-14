@@ -3,7 +3,8 @@
 @section('content')
 	<div>
 		@foreach ($owm_output->list as $owm)
-	    <p>{{ $owm->name }}: {{ $owm->main->temp }}</p>
+	    <h4>{{ $owm->name }}</h4>
+	    <p>{{ $owm->main->temp }} (OpenWeatherMap.org)</p>
 		@endforeach
 	</div>
 @stop
