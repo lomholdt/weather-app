@@ -39,6 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>
+                <div>Weather App Project</div>
             </div>
         </div>
     </body>
