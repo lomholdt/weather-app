@@ -26,8 +26,12 @@ class WeatherController extends Controller
         $weather = new \App\Classes\YahooWeather;
         $myWeather = $weather->getWeatherByCity($city);
 
+        // Yr.no Weather
+        $yrData = new \App\Classes\YrNoWeather;
+        $yrWeather = $yrData->getWeatherByLatLong(56, 12);
+
         // WeatherData to be passed
-        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather);
+        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather, "yrWeather" => $yrWeather);
 
         return view('weather')->with('weatherData', $weatherData);
     }

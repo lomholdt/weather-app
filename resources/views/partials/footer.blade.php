@@ -2,24 +2,23 @@
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        <h5 class="white-text">Weather App</h5>
+        <p class="grey-text text-lighten-4">Made by <a href="https://www.linkedin.com/profile/view?id=221219397">Jonas Tonny</a> & <a href="https://dk.linkedin.com/in/jonaslomholdt">Jonas Lomholdt</a></p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
+        <h5 class="white-text">Powered By</h5>
         <ul>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          <li><a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/white.png" width="134" height="29"/> </a></li>
+          <li><a href="http://openweathermap.org/">OpenWeatherMap</a></li>
+          <li><a href="http://dmi.dk">DMI</a></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
     <div class="container">
-    © 2014 Copyright Text
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    © {{ date("Y") }} Weather App
+    {{-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> --}}
     </div>
   </div>
 </footer>
