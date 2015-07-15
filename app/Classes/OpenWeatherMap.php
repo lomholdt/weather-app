@@ -15,6 +15,7 @@ class OpenWeatherMap {
 	    	$weather->setCountry($elm->sys->country);
 	    	$weather->setLat($elm->coord->lat);
 	    	$weather->setLong($elm->coord->lon);
+	    	$weather->setDescription($elm->weather[0]->description);
 	    }
 
         return $weather;

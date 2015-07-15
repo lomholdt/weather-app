@@ -8,6 +8,7 @@ class Weather{
 	private $temp;
 	private $country;
 	private $city;
+	private $description;
 
 	private $lat;
 	private $long;
@@ -58,6 +59,14 @@ class Weather{
 
 	public function getLong(){
 		return $this->long;
+	}
+
+	public function setDescription($description){
+		$this->description = $description;
+	}
+
+	public function getDescription(){
+		return $this->description;
 	}
 
 }
