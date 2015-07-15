@@ -23,5 +23,12 @@
           </div>
         </div>
 	@endforeach
+
+  <script>
+    $(function(){
+      Materialize.toast('Average temperature is {{ $avgTemp }} &deg;C', 4000);
+    });
+  </script>
+
 </div>
 @stop
