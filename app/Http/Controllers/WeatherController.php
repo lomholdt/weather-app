@@ -18,13 +18,11 @@ class WeatherController extends Controller
     public function index($city = 'Copenhagen')
     {
 
-
-
         // OpenWeatherMap
         $owm = new \App\Classes\OpenWeatherMap;
         $owm_output = $owm->owmCityWeather($city);
 
-        // YahooWeather
+        // Yahoo Weather
         $weather = new \App\Classes\YahooWeather;
         $myWeather = $weather->getWeatherByCity($city);
 
