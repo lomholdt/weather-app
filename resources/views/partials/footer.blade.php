@@ -12,7 +12,7 @@
           <li><a href="http://openweathermap.org/">OpenWeatherMap</a></li>
           <li><a href="http://dmi.dk">DMI</a></li>
           <li><a href="http://yr.no">Yr.no</a></li>
-          <li><a href="http://forecast.io">forecast.io</a></li>
+          <li><a href="http://forecast.io">Forecast.io</a></li>
         </ul>
       </div>
     </div>
