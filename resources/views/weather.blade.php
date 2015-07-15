@@ -4,7 +4,7 @@
 
 <div class="row">
 	@foreach($weatherData as $w)
-        <div class="col s12 m4 animated fadeIn">
+        <div class="col s12 m4 animated fadeIn hvr-float">
           <div class="card small">
             <div class="card-image animated fadeIn">
               {{-- <img src="https://placeimg.com/640/480/nature"> --}}
