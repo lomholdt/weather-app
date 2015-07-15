@@ -25,6 +25,11 @@ class WeatherController extends Controller
         $weather = new \App\Classes\YahooWeather;
         $myWeather = $weather->getWeatherByCity($city);
 
+        // DMI TODO: Get lat+long, add to array
+        
+        #$dmi = new \App\Classes\Dmi;
+        #$dmi_output = $dmi->dmiCityWeather($lat, $long);
+
         $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather);
 
         return view('weather')->with('weatherData', $weatherData);

@@ -7,7 +7,7 @@ class Dmi {
 	    $dmi_output = json_decode($dmi_json);
 
 	    $weather = new Weather();
-	    $weather->setOrigin('Dmi');
+	    $weather->setOrigin('DMI');
 	    $foreach ($dmi_output as $elm) {
 	    	$weather->setTemp($elm->temp);
 	    	$weather->setCity($elm->name);
