@@ -40,8 +40,14 @@ class WeatherController extends Controller
         $dmi = new \App\Classes\Dmi;
         $dmi_output = $dmi->dmiCityWeather($lat, $long);
 
+        // Dark Sky Forecast
+        $forecast = new \App\Classes\DarkSkyForecast;
+        $forecast_output = $forecast->forecastCityWeather($lat, $long);
+        $forecast_output->setCountry($owm_output->getCountry());
+        $forecast_output->setCity($owm_output->getCity());
+
         // WeatherData to be passed
-        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather, "dmi_output"=>$dmi_output, "yrWeather" => $yrWeather);
+        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather, "dmi_output"=>$dmi_output, "yrWeather" => $yrWeather, "forecast_output"=>$forecast_output);
 
         return view('weather')->with('weatherData', $weatherData);
     }
