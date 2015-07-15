@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 //use App\Classes\YahooWeather;
 
 class WeatherController extends Controller
@@ -15,8 +16,13 @@ class WeatherController extends Controller
      *
      * @return Response
      */
-    public function index($city = 'Copenhagen')
+    public function index($city = null)
     {
+
+        if (!isset($city)){
+            $location = \GeoIP::getLocation();
+            $city = $location['city'];
+        }
 
         // OpenWeatherMap
         $owm = new \App\Classes\OpenWeatherMap;
