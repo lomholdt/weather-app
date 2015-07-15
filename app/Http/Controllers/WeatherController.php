@@ -22,17 +22,20 @@ class WeatherController extends Controller
         $owm = new \App\Classes\OpenWeatherMap;
         $owm_output = $owm->owmCityWeather($city);
 
+        // Lat+long
+        $lat = $owm_output->getLat();
+        $long = $owm_output->getLong();
+
         // Yahoo Weather
         $weather = new \App\Classes\YahooWeather;
         $myWeather = $weather->getWeatherByCity($city);
 
-        // DMI TODO: Get lat+long, add to array
-        
-        #$dmi = new \App\Classes\Dmi;
-        #$dmi_output = $dmi->dmiCityWeather($lat, $long);
+        // DMI        
+        $dmi = new \App\Classes\Dmi;
+        $dmi_output = $dmi->dmiCityWeather($lat, $long);
 
         // WeatherData to be passed
-        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather);
+        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather, "dmi_output"=>$dmi_output);
 
         return view('weather')->with('weatherData', $weatherData);
     }

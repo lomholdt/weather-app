@@ -13,6 +13,8 @@ class OpenWeatherMap {
 	    	$weather->setTemp($elm->main->temp);
 	    	$weather->setCity($elm->name);
 	    	$weather->setCountry($elm->sys->country);
+	    	$weather->setLat($elm->coord->lat);
+	    	$weather->setLong($elm->coord->lon);
 	    }
 
         return $weather;
