@@ -14,6 +14,7 @@ class YrNoWeather{
 	    $xmlData = curl_exec($session);
 
 		$xml = simplexml_load_string($xmlData);
+
 		$currentWeather = $xml->xpath('/weatherdata/product/time/*[1]')[0];
 
 		$weather = new Weather();
@@ -24,6 +25,10 @@ class YrNoWeather{
 
 		return $weather;
 
+	}
+
+	public function getWeatherDescription($lat, $long){
+		$requestUrl = "http://api.yr.no/weatherapi/textlocation/1.0/?language=en;latitude=".$lat.";longitude=".$long;
 	}
 }
 
