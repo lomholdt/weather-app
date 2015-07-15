@@ -9,6 +9,9 @@ class Weather{
 	private $country;
 	private $city;
 
+	private $lat;
+	private $long;
+
 	public function setOrigin($origin){
 		$this->origin = $origin;
 	}
@@ -39,6 +42,22 @@ class Weather{
 
 	public function getCity(){
 		return $this->city;
+	}
+
+	public function setLat($lat){
+		$this->lat = $lat;
+	}
+
+	public function getLat(){
+		return $this->lat;
+	}
+
+	public function setLong($long){
+		$this->long = $long;
+	}
+
+	public function getLong(){
+		return $this->long;
 	}
 
 }
