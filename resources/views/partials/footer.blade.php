@@ -11,6 +11,7 @@
           <li><a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/white.png" width="134" height="29"/> </a></li>
           <li><a href="http://openweathermap.org/">OpenWeatherMap</a></li>
           <li><a href="http://dmi.dk">DMI</a></li>
+          <li><a href="http://yr.no">Yr.no</a></li>
         </ul>
       </div>
     </div>

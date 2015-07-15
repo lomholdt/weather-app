@@ -32,14 +32,16 @@ class WeatherController extends Controller
 
         // Yr.no Weather
         $yrData = new \App\Classes\YrNoWeather;
-        $yrWeather = $yrData->getWeatherByLatLong(56, 12);
+        $yrWeather = $yrData->getWeatherByLatLong($lat, $long);
+        $yrWeather->setCountry($owm_output->getCountry());
+        $yrWeather->setCity($owm_output->getCity());
 
         // DMI        
         $dmi = new \App\Classes\Dmi;
         $dmi_output = $dmi->dmiCityWeather($lat, $long);
 
         // WeatherData to be passed
-        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather, "dmi_output"=>$dmi_output);
+        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather, "dmi_output"=>$dmi_output, "yrWeather" => $yrWeather);
 
         return view('weather')->with('weatherData', $weatherData);
     }
