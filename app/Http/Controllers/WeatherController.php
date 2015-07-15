@@ -28,9 +28,12 @@ class WeatherController extends Controller
         $owm = new \App\Classes\OpenWeatherMap;
         $owm_output = $owm->owmCityWeather($city);
 
-        // Lat+long
+        // Lat+long+country
         $lat = $owm_output->getLat();
         $long = $owm_output->getLong();
+        $country = $owm_output->getCountry();
+
+        var_dump($country);
 
         // Yahoo Weather
         $weather = new \App\Classes\YahooWeather;
@@ -52,8 +55,12 @@ class WeatherController extends Controller
         $forecast_output->setCountry($owm_output->getCountry());
         $forecast_output->setCity($owm_output->getCity());
 
+        // Wunderground
+        $Wunderground = new \App\Classes\Wunderground;
+        $wunderground_output = $Wunderground->wgCityWeather($city, $country);
+
         // WeatherData to be passed
-        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather, "dmi_output"=>$dmi_output, "yrWeather" => $yrWeather, "forecast_output"=>$forecast_output);
+        $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather, "dmi_output"=>$dmi_output, "yrWeather" => $yrWeather, "forecast_output"=>$forecast_output, "wunderground_output"=>$wunderground_output);
         return view('weather')->with('weatherData', $weatherData)->with('avgTemp', $this->getAvgTemp($weatherData));
     }
 
