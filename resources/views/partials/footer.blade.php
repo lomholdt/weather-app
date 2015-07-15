@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col l6 s12">
         <h5 class="white-text">Weather App</h5>
-        <p class="grey-text text-lighten-4">Made by <a href="https://www.linkedin.com/profile/view?id=221219397">Jonas Tonny</a> & <a href="https://dk.linkedin.com/in/jonaslomholdt">Jonas Lomholdt</a></p>
+        <p class="grey-text text-lighten-4">Made by <a href="https://www.linkedin.com/in/jonastonnynielsen">Jonas Tonny</a> & <a href="https://dk.linkedin.com/in/jonaslomholdt">Jonas Lomholdt</a></p>
       </div>
       <div class="col l4 offset-l2 s12">
         <h5 class="white-text">Powered By</h5>
@@ -12,6 +12,7 @@
           <li><a href="http://openweathermap.org/">OpenWeatherMap</a></li>
           <li><a href="http://dmi.dk">DMI</a></li>
           <li><a href="http://yr.no">Yr.no</a></li>
+          <li><a href="http://forecast.io">forecast.io</a></li>
         </ul>
       </div>
     </div>

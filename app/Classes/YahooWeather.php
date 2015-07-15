@@ -23,6 +23,7 @@ class YahooWeather{
 	     $weather->setOrigin('Yahoo'); 
 	     foreach ($phpObj as $elm) {
 	     	$weather->setTemp($elm->results->channel->item->condition->temp);
+	     	$weather->setDescription($elm->results->channel->item->condition->text);
 	     	$weather->setCity($elm->results->channel->location->city);
 	     	$weather->setCountry($elm->results->channel->location->country);
 	     }

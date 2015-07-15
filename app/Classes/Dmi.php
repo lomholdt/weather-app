@@ -14,12 +14,9 @@ class Dmi {
 	    $weather = new Weather();
 	    $weather->setOrigin('DMI');
 	    foreach ($dmi_output as $elm) {
-	    	#foreach($elm as $city) {
-		    	$weather->setTemp($elm->temp);
-		    	$weather->setCity($elm->name);
-		    	$weather->setCountry($elm->country);
-		    	#break;
-	    	#}
+		    $weather->setTemp($elm->temp);
+		    $weather->setCity($elm->name);
+		    $weather->setCountry($elm->country);
 	    }
 	    return $weather;
 
