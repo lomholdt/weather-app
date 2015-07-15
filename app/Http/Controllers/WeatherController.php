@@ -33,8 +33,6 @@ class WeatherController extends Controller
         $long = $owm_output->getLong();
         $country = $owm_output->getCountry();
 
-        var_dump($country);
-
         // Yahoo Weather
         $weather = new \App\Classes\YahooWeather;
         $myWeather = $weather->getWeatherByCity($city);
