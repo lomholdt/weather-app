@@ -15,8 +15,9 @@ class WeatherController extends Controller
      *
      * @return Response
      */
-    public function index($city)
+    public function index($city = 'Copenhagen')
     {
+
         // OpenWeatherMap
         $owm = new \App\Classes\OpenWeatherMap;
         $owm_output = $owm->owmCityWeather($city);
@@ -30,6 +31,7 @@ class WeatherController extends Controller
         #$dmi = new \App\Classes\Dmi;
         #$dmi_output = $dmi->dmiCityWeather($lat, $long);
 
+        // WeatherData to be passed
         $weatherData = array("owm_output"=>$owm_output, "myWeather"=>$myWeather);
 
         return view('weather')->with('weatherData', $weatherData);
