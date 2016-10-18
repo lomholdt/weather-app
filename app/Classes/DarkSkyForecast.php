@@ -2,7 +2,7 @@
 namespace App\Classes;
 class DarkSkyForecast { 
 	public function forecastCityWeather($lat, $long) {
-		$forecast_url = "https://api.forecast.io/forecast/6c23ce4bf94e613cf7e5239da0389d36/".$lat.",".$long."?units=si";
+		$forecast_url = "https://api.darksky.net/forecast/6c23ce4bf94e613cf7e5239da0389d36/".$lat.",".$long."?units=si";
     	$forecast_json = file_get_contents($forecast_url,0,null,null);
     	$forecast_output = json_decode($forecast_json);
 
